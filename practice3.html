@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input {
+            display: block;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Password Verification</h2>
+    <label for="password1">Enter Password:</label>
+    <input type="password" id="password1" required>
+    
+    <label for="password2">Re-enter Password:</label>
+    <input type="password" id="password2" required>
+    
+    <button id="verifyButton">Validate Your Password</button>
+
+    <script>
+        document.getElementById('verifyButton').addEventListener('click', function() {
+            const password1 = document.getElementById('password1').value;
+            const password2 = document.getElementById('password2').value;
+
+            // Check if the password is at least 8 characters long
+            if (password1.length < 8 || password2.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+
+            // Check if the passwords match
+            if (password1 !== password2) {
+                alert('Passwords do not match. Please try again.');
+                return;
+            }
+
+            // If both checks pass
+            alert('Everything is good!');
+        });
+    </script>
+
+</body>
+</html>

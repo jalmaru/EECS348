@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EECS 348 Lab Seven Practice Two</title>
+    <style> /* internal css styling */
+        #textContainer {
+            padding: 20px;
+            border: 5px solid black;
+            width: fit-content;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>EECS 348 Lab Seven Practice Two</h1>
+
+    <div id="textContainer">
+        <p id="dummyText">Text that will change</p>
+    </div>
+
+    <label for="rgbColor">Enter RGB Color (e.g., 255,0,0): </label>
+    <input type="text" id="rgbColor" placeholder="255,0,0" />
+
+    <label for="borderWidth">Enter Border Width: </label>
+    <input type="number" id="borderWidth" placeholder="5" />
+
+    <label for="backgroundColor">Enter Background RGB (e.g., 255,23,42): </label>
+    <input type="text" id="backgroundColor" placeholder="255,23,42"/>
+
+    <button onclick="updateStyles()">Update</button>
+
+    <script>
+        function updateStyles() {
+            const rgbInput = document.getElementById('rgbColor').value;
+            const borderWidthInput = document.getElementById('borderWidth').value;
+            const backgroundInput = document.getElementById('backgroundColor').value;
+
+            const textContainer = document.getElementById('textContainer');
+            const dummyText = document.getElementById('dummyText');
+
+            // Update paragraph color
+            dummyText.style.color = `rgb(${rgbInput})`;
+
+            // Update border color and width
+            textContainer.style.borderColor = `rgb(${backgroundInput})`;
+            textContainer.style.borderWidth = `${borderWidthInput}px`;
+        }
+    </script>
+    
+</body>
+</html>
